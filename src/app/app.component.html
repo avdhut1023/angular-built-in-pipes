@@ -1,0 +1,76 @@
+<p>
+  <hello name="{{ name | uppercase }}"></hello>
+  <hello name="{{ name | lowercase }}"></hello>
+  <hello name="{{ name | titlecase }}"></hello>
+  <strong>{{'some string' | titlecase}}</strong>
+</p>
+
+  <h1>Date Pipe</h1>
+
+<p>
+  <strong>Witout pipe :</strong> {{todayDate}}
+</p>
+
+<p>
+  <strong>With pipe :</strong> {{todayDate | date}}
+</p>
+
+<p>
+  <strong>with d/M/yy pipe :</strong> {{todayDate | date:'d/M/yy'}}
+</p>
+
+<p>
+  <strong>With fullDate pipe :</strong> {{todayDate | date:'fullDate'}}
+</p>
+
+<p>
+  <strong>With fullDate pipe :</strong> {{todayDate | date:'fullDate'}}
+</p>
+
+<h1>Currency Pipe</h1>
+ 
+    <p>A: {{a | currency}}</p>
+ 
+ 
+    <p>A: {{a | currency:'CAD'}}</p>
+ 
+ 
+    <p>A: {{a | currency:'CAD':'code'}}</p>
+ 
+ 
+    <p>B: {{b | currency:'CAD':'symbol':'4.2-3'}}</p>
+ 
+ 
+    <p>B: {{b | currency:'CAD':'symbol-narrow':'4.2-2'}}</p>
+ 
+     <p>B: {{b | currency:'CLP'}}</p>
+
+<h1>Slice Pipe</h1>
+<ul>
+    <li *ngFor="let i of collection | slice:1:3">{{i}}</li>
+  </ul>
+
+  <h1> Decimal Pipe</h1>
+  <!--output '2.718'-->
+    <p>e (no formatting): {{e | number}}</p>
+    
+    <!--output '002.71828'-->
+    <p>e (3.1-5): {{e | number:'3.1-5'}}</p>
+ 
+    <!--output '0,002.71828'-->
+    <p>e (4.5-5): {{e | number:'4.5-5'}}</p>
+    
+    <!--output '0 002,71828'-->
+    <p>e (french): {{e | number:'4.5-5':'fr'}}</p>
+ 
+    <!--output '3.14'-->
+    <p>pi (no formatting): {{pi | number}}</p>
+    
+    <!--output '003.14'-->
+    <p>pi (3.1-5): {{pi | number:'3.1-5'}}</p>
+ 
+    <!--output '003.14000'-->
+    <p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
+ 
+    <!--output '-3' / unlike '-2' by Math.round()-->
+    <p>-2.5 (1.0-0): {{-2.5 | number:'1.0-0'}}</p>
